@@ -25,7 +25,7 @@
 
 
 //problem 3
-// const solution = (str1, str2) => {
+// const solution3 = (str1, str2) => {
 //     if (str2.length > str1.length) return false
 
 //     let str1Rev = str1.split('').reverse()
@@ -38,8 +38,8 @@
 //     return true
 // }
 
-// console.log(solution('abc', 'bc'))
-// console.log(solution('abc', 'd'))
+// console.log(solution3('abc', 'bc'))
+// console.log(solution3('abc', 'd'))
 
 
 
@@ -189,7 +189,7 @@
 
 
 //problem 12
-// const solution = (a) => {
+// const solution12 = (a) => {
 //     let b = []
 //     let c = []
 
@@ -216,7 +216,7 @@
 //     return [b, c]
 // }
 
-// console.log(solution([1, 2, 2, 2, 3, 3, 5, 6, 9, 10, 12, 15, -4, -5, -6, -6]))
+// console.log(solution12([1, 2, 2, 2, 3, 3, 5, 6, 9, 10, 12, 15, -4, -5, -6, -6]))
 
 
 
@@ -352,3 +352,95 @@
 
 // console.log(passwordGenerator())
 
+
+
+//problem 16
+// const solution16 = (arr) => {
+//     arr.sort((a, b) => a - b)
+
+//     let result = []
+
+//     for (let i = 0; i < arr.length; i += 2) {
+//         result.push(arr[i])
+//     }
+
+//     for (let i = arr.length - 1 - (arr.length % 2); i >= 0; i -= 2) {
+//         result.push(arr[i])
+//     }
+
+//     return result
+// }
+
+// console.log(solution16([1, 2, 3, 4, 5, 6, 7, 8]))
+// console.log(solution16([1, 2, 3, 4, 5, 6, 7]))
+
+
+
+//problem 17
+// const solution17 = (str) => {
+//     str = str.toLowerCase().split('')
+//     let mp = new Map()
+
+//     str.forEach(el => {
+//         if (mp.get(el)) {
+//             mp.set(el, Number(mp.get(el)) + 1)
+//         } else {
+//             mp.set(el, 1)
+//         }
+//     });
+
+//     let sortedMp = new Map([...mp.entries()].sort((a, b) => b[1] - a[1]))
+//     let objFromMp = Object.fromEntries(sortedMp)
+//     let result = ""
+//     for (let key in objFromMp) {
+//         for (let i = 0; i < objFromMp[key]; i++) {
+//             result += key
+//         }
+//     }
+//     return result
+// }
+
+// console.log(solution17("uehruinsndjfjqeuiehfuhuasjjfdhuiaheuih"))
+
+
+
+//problem 18
+// const solution18 = (str1, str2) => {
+
+
+
+// }
+
+// console.log(solution18("abcdefghijk", "defg"))
+
+
+
+//problem 19
+// const solution19 = (str, n) => {
+//     n = n % 26
+//     n = Math.abs(n)
+//     alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+//     str = str.toLowerCase()
+//     let result = ""
+
+//     str.split('').forEach(el => {
+//         let currentPos = alphabet.indexOf(el)
+//         let newPos = currentPos + n
+//         result += alphabet[newPos]
+//     });
+
+//     return result
+// }
+
+// console.log(solution19("abcdefgz", -3))
+
+
+
+//problem 20
+const solution20 = (str1, str2) => {
+    return str1.split('').sort().join('') === str2.split('').sort().join('')
+}
+
+console.log(solution20("abc", "bac"))
+console.log(solution20("abcw", "bwac"))
+console.log(solution20("abcwqwe", "bwacasd"))
