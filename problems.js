@@ -2,7 +2,7 @@
 // const differenceMinMaw = (arr) => {
 //     if (arr.length <= 1) return 0
 
-//     return Math.maw(...arr) - Math.min(...arr) 
+//     return Math.maw(...arr) - Math.min(...arr)
 // }
 
 // console.log(differenceMinMaw([1,2,3,-4]))
@@ -15,7 +15,7 @@
 //     let ans = []
 //     string.split(' ').forEach(word => {
 //         if (word.length > n) ans.push(word)
-//     }) 
+//     })
 
 //     return ans
 // }
@@ -181,7 +181,7 @@
 //     let str = str1 + str1
 
 //     return str.includes(str2)
-// } 
+// }
 
 // console.log(cyclicShift("abcd", "bcda"))
 // console.log(cyclicShift("abcd", "adbc"))
@@ -217,4 +217,138 @@
 // }
 
 // console.log(solution([1, 2, 2, 2, 3, 3, 5, 6, 9, 10, 12, 15, -4, -5, -6, -6]))
+
+
+
+//problem 13
+// const solution13 = (str) => {
+//     let startLength = str.length
+//     let words = str.toLowerCase().split(' ')
+//     let arr = []
+
+//     const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+//     const numberRegex = /^\d+$/
+
+//     words.forEach(word => {
+//         if (emailRegex.test(word)) {
+//             arr.push("[контакти заборонені]")
+//         } else if (word.includes('.')) {
+//             arr.push("[посилання заборонено]")
+//         } else if (numberRegex.test(word)) {
+//             if (word.length <= 3) {
+//                 arr.push(word)
+//             }
+//         } else {
+//             arr.push(word)
+//         }
+//     });
+
+
+//     let ans = arr.join(' ')
+//     ans = ans.charAt(0).toUpperCase() + ans.slice(1)
+
+//     let endLength = ans.length
+
+//     if (endLength > startLength) {
+//         setInterval(() => {
+//             alert("Вам потрібна допомога?")
+//         }, 5000)
+//     }
+//     return ans
+// }
+
+// console.log(solution13("hello world testemail@gmail.com https://www.google.com youtube.com 23523 12 123 321 12321"))
+
+
+
+//problem 14
+// const titleForAnswer = document.querySelector('.solution14')
+
+// const solution14 = (str) => {
+//     let stack = []
+//     let fl = 0
+
+//     for (let i = 0; i < str.length; i++) {
+//         let char = str[i]
+
+//         if (char === '(') {
+//             stack.push(char)
+//         } else {
+//             if (stack.length === 0) {
+//                 titleForAnswer.innerHTML = "Послідовність не правильна"
+//                 return false
+//             } else {
+//                 stack.pop()
+//             }
+//         }
+//     }
+
+//     if (stack.length === 0 && str.length % 2 === 0) {
+//         titleForAnswer.innerHTML = "Послідовність правильна"
+//         return true
+//     } else {
+//         titleForAnswer.innerHTML = "Послідовність не правильна"
+//         return false
+//     }
+// }
+
+// console.log(solution14("()"))
+// console.log(solution14("())"))
+
+
+
+//problem 15
+// const upperCaseRegex = /^[A-Z]+$/
+// const numberRegex = /[0-9]/
+
+// const generateRandomChar = () => {
+//     let chars = [
+//         '0123456789',
+//         '_',
+//         'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+//         'abcdefghijklmnopqrstuvwxyz',
+//     ]
+
+//     let randomCategory = Math.floor(Math.random() * chars.length)
+//     let randomCharFromCategory = Math.floor(Math.random() * chars[randomCategory].length)
+
+//     return chars[randomCategory][randomCharFromCategory]
+// }
+
+// const checkNumbersInPassword = (password, char) => {
+//     let lastChar = password[password.length - 1]
+//     return numberRegex.test(lastChar) && numberRegex.test(char)
+// }
+
+// const passwordGenerator = () => {
+//     let len = Math.floor(Math.random() * (20 - 6 + 1)) + 6;
+//     let result = ''
+//     let numberCount = 0
+//     let upperCaseCount = 0
+//     let underscoreCount = 0
+
+//     while (result.length < len) {
+//         let randomChar = generateRandomChar()
+
+//         if (randomChar === '_' && underscoreCount === 0) {
+//             result += randomChar
+//             underscoreCount++
+//         }
+//         else if (upperCaseRegex.test(randomChar) && upperCaseCount < 2) {
+//             result += randomChar
+//             upperCaseCount++
+//         } else if (numberRegex.test(randomChar)
+//             && numberCount < 5
+//             && !checkNumbersInPassword(result, randomChar)) {
+//             result += randomChar
+//             numberCount++
+//         } else if (!upperCaseRegex.test(randomChar) && !numberRegex.test(randomChar) && randomChar !== '_') {
+//             result += randomChar
+//         }
+//     }
+
+//     return result
+// }
+
+// console.log(passwordGenerator())
 
