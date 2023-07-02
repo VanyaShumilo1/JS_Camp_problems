@@ -2,10 +2,10 @@
 // const differenceMinMaw = (arr) => {
 //     if (arr.length <= 1) return 0
 
-//     return Math.maw(...arr) - Math.min(...arr)
+//     return Math.max(...arr) - Math.min(...arr)
 // }
 
-// console.log(differenceMinMaw([1,2,3,-4]))
+// console.log(differenceMinMaw([1, 2, 3, -4]))
 // console.log(differenceMinMaw([16]))
 
 
@@ -437,10 +437,10 @@
 
 
 //problem 20
-const solution20 = (str1, str2) => {
-    return str1.split('').sort().join('') === str2.split('').sort().join('')
-}
+// const solution20 = (str1, str2) => {
+//     return str1.split('').sort().join('') === str2.split('').sort().join('')
+// }
 
-console.log(solution20("abc", "bac"))
-console.log(solution20("abcw", "bwac"))
-console.log(solution20("abcwqwe", "bwacasd"))
+// console.log(solution20("abc", "bac"))
+// console.log(solution20("abcw", "bwac"))
+// console.log(solution20("abcwqwe", "bwacasd"))
