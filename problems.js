@@ -1,4 +1,4 @@
-//problem 1
+// problem 1
 // const differenceMinMaw = (arr) => {
 //     if (arr.length <= 1) return 0
 
@@ -10,7 +10,7 @@
 
 
 
-//problem 2
+// problem 2
 // const countWords = (string, n) => {
 //     let ans = []
 //     string.split(' ').forEach(word => {
@@ -24,7 +24,7 @@
 
 
 
-//problem 3
+// problem 3
 // const solution3 = (str1, str2) => {
 //     if (str2.length > str1.length) return false
 
@@ -43,7 +43,7 @@
 
 
 
-//problem 4
+// problem 4
 // const averages = (arr) => {
 //     let ans = []
 
@@ -59,7 +59,7 @@
 
 
 
-//problem 5.1
+// problem 5.1
 // const countVowels = (str) => {
 //     const vowels = ['a', 'e', 'i', 'o', 'u']
 //     let ans = 0
@@ -76,7 +76,7 @@
 
 
 
-//problem 5.2
+// problem 5.2
 // const removeABC = (str) => {
 //     if (str.includes('a') || str.includes('b') || str.includes('c')) {
 //         return str.replaceAll('a', '').replaceAll('b', '').replaceAll('c', '')
@@ -90,7 +90,7 @@
 
 
 
-//problem 6
+// problem 6
 // const difference = (arr1, arr2) => {
 //     let ans = []
 
@@ -113,7 +113,7 @@
 
 
 
-//problem 7
+// problem 7
 // const changeObj = (obj) => {
 //     let newObj = {}
 
@@ -128,7 +128,7 @@
 
 
 
-//problem 8
+// problem 8
 // const calculateDifference = (obj, n) => {
 //     const cost = Object.values(obj).reduce((sum, current) => sum + current, 0)
 
@@ -141,7 +141,7 @@
 
 
 
-//problem 9
+// problem 9
 // const doesBrickFit = (a, b, c, w, h) => {
 //     if ((a <= h && b <= w)
 //         || (a <= w && b <= h)
@@ -172,7 +172,7 @@
 
 
 
-//problem 11
+// problem 11
 // const cyclicShift = (str1, str2) => {
 //     if (str1.length !== str2.length) {
 //         return false
@@ -188,7 +188,7 @@
 
 
 
-//problem 12
+// problem 12
 // const solution12 = (a) => {
 //     let b = []
 //     let c = []
@@ -220,7 +220,7 @@
 
 
 
-//problem 13
+// problem 13
 // const solution13 = (str) => {
 //     let startLength = str.length
 //     let words = str.toLowerCase().split(' ')
@@ -261,7 +261,7 @@
 
 
 
-//problem 14
+// problem 14
 // const titleForAnswer = document.querySelector('.solution14')
 
 // const solution14 = (str) => {
@@ -297,7 +297,7 @@
 
 
 
-//problem 15
+// problem 15
 // const upperCaseRegex = /^[A-Z]+$/
 // const numberRegex = /[0-9]/
 
@@ -354,7 +354,7 @@
 
 
 
-//problem 16
+// problem 16
 // const solution16 = (arr) => {
 //     arr.sort((a, b) => a - b)
 
@@ -376,7 +376,7 @@
 
 
 
-//problem 17
+// problem 17
 // const solution17 = (str) => {
 //     str = str.toLowerCase().split('')
 //     let mp = new Map()
@@ -404,18 +404,43 @@
 
 
 
-//problem 18
+// problem 18
 // const solution18 = (str1, str2) => {
+//     str1 = str1.toLowerCase()
+//     str2 = str2.toLowerCase()
+//     if (str2.length > str1.length) {
+//         let tmp = str1
+//         str1 = str2
+//         str2 = tmp
+//     }
 
+//     let ans = ''
+//     let curLength = 1
+//     let curStart = 0
+//     for (let i = 0; i < str2.length;) {
+//         if (ans.length === str2.length) {
+//             return ans
+//         }
+//         let cur = str2.substr(curStart, curLength)
+//         if (str1.indexOf(cur) !== -1) {
+//             ans = cur
+//             curLength++
+//         } else {
+//             curStart = i
+//             i++
+//         }
+//     }
 
-
+//     return ans
 // }
 
-// console.log(solution18("abcdefghijk", "defg"))
+// console.log(solution18("Прямокутник", "плмокутвллмлп"))
+// console.log(solution18("dog", "gkewdogofpw"))
+// console.log(solution18("qewfdogqwef", "gkewdogofpw"))
 
 
 
-//problem 19
+// problem 19
 // const solution19 = (str, n) => {
 //     n = n % 26
 //     n = Math.abs(n)
@@ -436,7 +461,7 @@
 
 
 
-//problem 20
+// problem 20
 // const solution20 = (str1, str2) => {
 //     return str1.split('').sort().join('') === str2.split('').sort().join('')
 // }
@@ -444,3 +469,6 @@
 // console.log(solution20("abc", "bac"))
 // console.log(solution20("abcw", "bwac"))
 // console.log(solution20("abcwqwe", "bwacasd"))
+
+
+
