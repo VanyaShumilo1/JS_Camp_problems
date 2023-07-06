@@ -465,10 +465,103 @@
 // const solution20 = (str1, str2) => {
 //     return str1.split('').sort().join('') === str2.split('').sort().join('')
 // }
-
+//
 // console.log(solution20("abc", "bac"))
 // console.log(solution20("abcw", "bwac"))
 // console.log(solution20("abcwqwe", "bwacasd"))
 
 
 
+//problem 21
+// class Student {
+//     constructor(name, lastName, faculty) {
+//         this.id = Math.floor(Math.random() * 10000)
+//         this.name = name
+//         this.lastName = lastName
+//         this.faculty = faculty
+//     }
+// }
+
+// class University {
+//     #students = []
+
+//     addStudent(student) {
+//         this.#students.push(student)
+//     }
+
+//     removeStudent(id) {
+//         this.#students = this.#students.filter(student => student.id !== id)
+//     }
+
+//     getStudentsFromFaculty(faculty) {
+//         console.log(this.#students.filter(student => student.faculty === faculty))
+//         return this.#students.filter(student => student.faculty === faculty)
+//     }
+
+//     getStudent(id) {
+//         console.log(this.#students.filter(student => student.id === id)[0])
+//         return this.#students.filter(student => student.id === id)[0]
+//     }
+
+//     getStudents() {
+//         console.log(this.#students)
+//         return this.#students
+//     }
+// }
+
+// const Univer = new University()
+// Univer.addStudent(new Student("Petro", "Petrov", "IT"))
+// Univer.addStudent(new Student("Ivan", "Ivanov", "Law"))
+// Univer.addStudent(new Student("Olexandr", "Alex", "IT"))
+// Univer.addStudent(new Student("Anastasia", "Jef", "IT"))
+// Univer.addStudent(new Student("Ira", "Pew", "Law"))
+// Univer.getStudents()
+
+
+
+//problem 22
+
+// const countWords = (str) => {
+//     return str.split(' ').length
+// }
+
+// const countSentences = (str) => {
+//     let sentencesCount = 0
+//     str.replaceAll('!!!', '!').replaceAll('...', '.').replaceAll('???', '?')
+//     str.split('').forEach(char => {
+//         if (char === '!' || char === '?' || char === '.') {
+//             sentencesCount++
+//         }
+//     })
+
+//     return sentencesCount
+// }
+
+// const countChars = (str) => {
+//     return str.replaceAll(' ', '').length
+// }
+
+// const countWordsWithStatistics = (str) => {
+//     const chars = [',', '.', '/', '-', '"', '!', '?', '&', '%', '(', ')']
+//     let wordsMap = new Map()
+//     chars.forEach(char => {
+//         str = str.replaceAll(char, '')
+//     })
+//     str.split(' ').forEach(char => {
+//         if (wordsMap.get(char)) {
+//             wordsMap.set(char, wordsMap.get(char) + 1)
+//         } else {
+//             wordsMap.set(char, 1)
+//         }
+//     })
+
+//     const sortedWordsMap = new Map([...wordsMap.entries()].sort((a, b) => b[1] - a[1]))
+//     const objFromSortedWordsMap = Object.fromEntries(sortedWordsMap)
+
+//     return objFromSortedWordsMap
+// }
+
+// console.log("Words: ", countWords("hello world! how are you? i'm fine, thank you."))
+// console.log("Sentences: ", countSentences("hello world! how are you? i'm fine, thank you."))
+// console.log("Chars: ", countChars("hello world! how are you? i'm fine, thank you."))
+// console.log("Statistics: ", countWordsWithStatistics("hello world! how are you? i'm fine, thank you."))
