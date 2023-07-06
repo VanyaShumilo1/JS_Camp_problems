@@ -478,7 +478,7 @@
 //         this.id = Math.floor(Math.random() * 10000)
 //         this.name = name
 //         this.lastName = lastName
-//         this.faculty = faculty
+//         this.faculty = faculty.toLowerCase()
 //     }
 // }
 
@@ -494,6 +494,7 @@
 //     }
 
 //     getStudentsFromFaculty(faculty) {
+//         faculty = faculty.toLowerCase()
 //         console.log(this.#students.filter(student => student.faculty === faculty))
 //         return this.#students.filter(student => student.faculty === faculty)
 //     }
@@ -508,7 +509,6 @@
 //         return this.#students
 //     }
 // }
-
 // const Univer = new University()
 // Univer.addStudent(new Student("Petro", "Petrov", "IT"))
 // Univer.addStudent(new Student("Ivan", "Ivanov", "Law"))
@@ -516,6 +516,8 @@
 // Univer.addStudent(new Student("Anastasia", "Jef", "IT"))
 // Univer.addStudent(new Student("Ira", "Pew", "Law"))
 // Univer.getStudents()
+// Univer.getStudentsFromFaculty('IT')
+// id генерується рандомно, тому не можу показати роботу методу getStudent i removeStudent
 
 
 
