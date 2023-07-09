@@ -117,8 +117,8 @@
 // const changeObj = (obj) => {
 //     let newObj = {}
 
-//     for (let keh in obj) {
-//         newObj[obj[keh]] = keh
+//     for (let key in obj) {
+//         newObj[obj[key]] = key
 //     }
 
 //     return newObj
@@ -373,6 +373,7 @@
 
 // console.log(solution16([1, 2, 3, 4, 5, 6, 7, 8]))
 // console.log(solution16([1, 2, 3, 4, 5, 6, 7]))
+// console.log(solution16([1, 2, 3, 4, 5]))
 
 
 
